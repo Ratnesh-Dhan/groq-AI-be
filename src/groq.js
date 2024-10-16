@@ -9,7 +9,7 @@ const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 // }
 
 async function getGroqChatCompletion(prompt) {
-    console.log(process.env.GROQ_API_KEY);
+    console.log({apikey: process.env.GROQ_API_KEY});
   return groq.chat.completions.create({
     messages: [
       {
