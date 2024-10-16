@@ -5,7 +5,11 @@ const port = 3001;
 const cors = require('cors');
 const { getGroqChatCompletion } = require('./src/groq');
 const { sendEmail } = require('./sendMail');
-app.use(cors());
+app.use(cors({
+  origin: '*',
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 
 app.get('/', (req, res) => {
   res.send('Hello, World!');
@@ -40,5 +44,5 @@ app.post('/submit', async(req, res) => {
 
 
 app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+  console.log('Server is running');
 });
