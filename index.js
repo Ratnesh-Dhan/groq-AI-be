@@ -17,11 +17,8 @@ app.get('/', (req, res) => {
 app.use(express.json());
 
 app.post('/submit', async(req, res) => {
-    console.log("requesting...");
   const { email, prompt} = req.body;
-//   console.log(email,prompt);
-//   console.log({apikey: process.env.GROQ_API_KEY})
-  //console.log(req);
+  console.log(`POST: /submit ${email} ${prompt}`);
   
   if (!email || !prompt) {
     return res.status(400).json({ error: 'Both strings are required' });
