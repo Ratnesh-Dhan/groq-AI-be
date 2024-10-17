@@ -12,10 +12,10 @@ router.post('/', async(req, res) => {
   
     const chatCompletion = await getGroqChatCompletion(prompt);
     // Print the completion returned by the LLM.
-    console.log(chatCompletion.choices[0]?.message?.content || "");
+    //console.log(chatCompletion.choices[0]?.message?.content || "");
     const text =chatCompletion.choices[0]?.message?.content || "";
     if(text)
-      sendEmail(email, "Your Groq AI  Response", text);
+      sendEmail(email, "Your Groq AI Response", text);
   
     // Process the strings here (e.g., concatenate, compare, etc.)
     const result = `Received: ${email} and ${prompt}`;
