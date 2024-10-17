@@ -6,7 +6,7 @@ const cors = require('cors');
 const { getGroqChatCompletion } = require('./src/groq');
 const { sendEmail } = require('./sendMail');
 app.use(cors({
-  origin: 'https://groq-ai-fe.vercel.app/',
+  origin: ['https://groq-ai-fe.vercel.app', 'https://groq-ai-q3scapwbd-ratneshdhans-projects.vercel.app'],
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
