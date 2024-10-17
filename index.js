@@ -7,7 +7,7 @@ const submitRouter  = require('./src/routes/submit');
 
 
 app.use(cors({
-  origin: process.env.ALLOWED_ORIGINS.split(','),
+  origin: process.env.ALLOWED_ORIGINS.split(',').map(origin => origin.trim()),
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
