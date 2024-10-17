@@ -23,7 +23,7 @@ let transporter = nodemailer.createTransport({
 // Send the email
 function sendEmail(to, subject, text) {
     return new Promise((resolve, reject) => {
-      const mailOptions = { from: '"Groq App Testing"<ratneshdhan@gmail.com>', to, subject, text};
+      const mailOptions = { from: `"Generated with Groq AI" <${process.env.MAIL}>`, to, subject, text };
       
       transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
